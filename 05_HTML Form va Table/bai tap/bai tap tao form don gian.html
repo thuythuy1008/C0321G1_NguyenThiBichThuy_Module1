@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo form đơn giản</title>
+    <style type="text/css">
+    #hello{color:blue;}
+    #say{color:orangered;}
+    </style>
+</head>
+<body>
+<form><h1>SỞ THÍCH CỦA BẠN</h1></form>
+<form action="/action_page.php">
+    <label id="hello">Họ và tên</label>
+    <input name="yourname" type="text"/><br>
+    <label id="hello">Email</label>
+    <input name="email" type="text"/><br>
+    <label id="hello">Sở thích</label>
+        <label <input name="hobby" value="sport" type="checkbox"/> Thể thao</label>
+        <label><input name="hobby" value="music" type="checkbox"/> Âm nhạc</label>
+        <label><input name="hobby" value="reading book" type="checkbox"/> Đọc sách</label> <br/>
+        <label><input name="hobby" value="web" type="checkbox"/> Lướt web</label>
+        <label><input name="hobby" value="playing game" type="checkbox"/> Chơi game</label>
+        <label><input name="hobby" value="film" type="checkbox"/> Điện ảnh</label> <br/>
+        <label><input name="hobby" value="travel" type="checkbox"/> Du lịch</label> <br/>
+<input type="submit" value="Gửi thông tin">
+<input type="reset" value="Nhập lại">
+</form>
+<form><h1>ĐĂNG KÍ HỌC VIÊN</h1></form>
+<form action="/action_page.php">
+    <label id="hello">Họ và tên</label>
+    <input name="yourname" type="text"/><br>
+    <label id="hello">Ngày sinh</label>
+    <input name="email" type="text"/><br>
+    <label id="hello">Giới tính</label>
+    Nam
+    <input type="radio" name="Giới tính" value="Nam">
+    Nữ
+    <input type="radio" name="Giới tính" value="Nữ"><br>
+    <label id="hello">Địa chỉ</label>
+    <input name="Địa chỉ" type="text"/><br>
+    <label id="hello">Lớp</label>
+    <select>
+        <option>-Chọn lớp-</option>
+        <option>Danh sach 1</option>
+        <option>Danh sach 2</option>
+        <option>Danh sach 3</option><br>
+    </select><br>
+    <label id="hello">Email</label>
+    <input name="Email" type="text"/><br>
+    <label id="hello">Điện thoại</label>
+    <input name="Điện thoại" type="number"/><br>
+<input type="submit" value="Đăng ký">
+<input type="reset" value="Nhập lại">
+</body>
+</html>
