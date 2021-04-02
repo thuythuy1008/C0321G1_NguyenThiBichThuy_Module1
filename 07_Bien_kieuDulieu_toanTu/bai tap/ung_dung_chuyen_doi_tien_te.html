@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table border="0">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="number" id="tien" placeholder="nhập số tiền"></td>
+        <td><select id="tienViet">
+            <option value="23000">Việt Nam</option>
+            <option value="1">USD</option>
+<!--            <option value="18000">Singapore</option>-->
+<!--            <option>Thái Lan</option>-->
+<!--            <option>Hàn Quốc</option>-->
+<!--            <option>Ấn Độ</option>-->
+<!--            <option>...</option>-->
+        </select></td>
+        <td><select id="tienUsd">
+            <option value="1">USD</option>
+            <option value="23000">Việt Nam</option>
+<!--            <option value="18000">Singapore</option>-->
+<!--            <option>Thái Lan</option>-->
+<!--            <option>Hàn Quốc</option>-->
+<!--            <option>Ấn Độ</option>-->
+<!--            <option>...</option>-->
+        </select></td>
+        <td>
+            <input type="button" value="Convert" onclick="chuyendoi()">
+        </td>
+    </tr>
+</table>
+<p id="hienthi"> Result: </p>
+<script>
+    function chuyendoi() {
+let a = document.getElementById("tien").value;
+let b = document.getElementById("tienViet").value;
+let c = document.getElementById("tienUsd").value;
+let d=a*c/b;
+        document.getElementById("hienthi").innerText=d;
+    }
+</script>
+</table>
+</body>
+</html>
