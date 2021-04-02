@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<!--Viết chương trình nhập điểm của một sinh viên -->
+<h2>Bảng điểm sinh viên</h2>
+<div>
+   <input type="number" id="diemly" placeholder="nhập điểm Lý">
+   <input type="number" id="diemhoa" placeholder="nhập điểm Hóa">
+   <input type="number" id="diemtoan" placeholder="nhập điểm Toán">
+   <input type="button" value="Tính" onclick="Tính()">
+</div>
+<script>
+    function Tính(){
+        let a =  document.getElementById("diemly").value;
+        let b = document.getElementById("diemhoa").value;
+        let c =  document.getElementById("diemtoan").value;
+        let tong = parseInt(a) + parseInt(b) + parseInt(c);
+        alert("tổng=" + tong);
+        let TB = (parseInt(a) + parseInt(b) + parseInt(c))/3;
+        alert("Trung Bình=" + TB);
+    }
+</script>
+
+
+<!--Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit)-->
+<h2>Chuyển độ 0C sang độ 0F</h2>
+<div>
+    <input type="number" id="doC" placeholder="nhập độ C">
+    <input type="button" value="Chuyển đổi" onclick="Chuyendoi()">
+</div>
+<script>
+    function Chuyendoi() {
+        let d =  document.getElementById("doC").value;
+        let chuyendoi = 9/5 * parseInt(d) + 32;
+        alert("chuyển đổi:" + chuyendoi);
+    }
+</script>
+
+
+<!--Viết chương trình tính diện tích hình tròn-->
+<h2>Tính diện tích hình tròn</h2>
+<div>
+    <input type="number" id="r" placeholder="nhập bán kính">
+    <input type="button" value="Diện tích" onclick="Dientich()">
+</div>
+<script>
+    function Dientich() {
+        let e =  document.getElementById("r").value;
+        let DT =parseInt(e) * parseInt(e) * 3.14;
+        alert("Diện tích:" + DT);
+    }
+</script>
+
+<!--Viết chương trình chu vi hình tròn -->
+<h2>Tính chu vi hình tròn</h2>
+<div>
+    <input type="number" id="f" placeholder="nhập bán kính">
+    <input type="button" value="Chu vi" onclick="Chuvi()">
+</div>
+<script>
+    function Chuvi() {
+        let g =  document.getElementById("f").value;
+        let CV =parseInt(g) * 2 * 3.14;
+        alert("Chu vi:" + CV);
+    }
+</script>
+</body>
+</html>
