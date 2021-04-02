@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<input type="number" id="so1" placeholder="nhập 1">
+<input type="number" id="so2" placeholder="nhập 2"><br>
+<input type="button" value="Addition(+)" onclick="cong()">
+<input type="button" value="Subtraction(-)" onclick="tru()">
+<input type="button" value="Multiplication(x)" onclick="nhan()">
+<input type="button" value="Division(/)" onclick="chia()">
+<p id="1"> Tổng: </p>
+<p id="2"> Hiệu: </p>
+<p id="3"> Tích: </p>
+<p id="4"> Thương: </p>
+<script>
+    function cong() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let tong = parseInt(a) + parseInt(b);
+        document.getElementById("1").innerText=tong;
+    }
+    function tru() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let hieu = parseInt(a) - parseInt(b);
+        document.getElementById("2").innerText=hieu;
+    }
+    function nhan() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let n = parseInt(a) * parseInt(b);
+        document.getElementById("3").innerText=n;
+    }
+    function chia() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let t = parseInt(a) / parseInt(b);
+        document.getElementById("4").innerText=t;
+    }
+</script>
+</body>
+</html>
