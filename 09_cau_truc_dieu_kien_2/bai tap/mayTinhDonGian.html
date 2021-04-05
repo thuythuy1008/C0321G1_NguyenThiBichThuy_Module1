@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <style>
+        table{
+            width: 150px;
+            border: 2px solid black;
+        }
+        td{
+            width: 20px;
+            height: 30px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th colspan="4"><input type="text" id="hienthi" style="color: blue"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="click1('1')" style="color: blue"></td>
+            <td><input type="button" value="2" onclick="click1('2')" style="color: blue"></td>
+            <td><input type="button" value="3" onclick="click1('3')" style="color: blue"></td>
+            <td><input type="button" value="+" onclick="click1('+')" style="color: blue"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="click1('4')" style="color: blue"></td>
+            <td><input type="button" value="5" onclick="click1('5')" style="color: blue"></td>
+            <td><input type="button" value="6" onclick="click1('6')" style="color: blue"></td>
+            <td><input type="button" value="-" onclick="click1('-')" style="color: blue"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="click1('7')" style="color: blue"></td>
+            <td><input type="button" value="8" onclick="click1('8')" style="color: blue"></td>
+            <td><input type="button" value="9" onclick="click1('9')" style="color: blue"></td>
+            <td><input type="button" value="*" onclick="click1('*')" style="color: blue"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="click2('C')" style="color: blue"></td>
+            <td><input type="button" value="0" onclick="click1('0')" style="color: blue"></td>
+            <td><input type="button" value="=" onclick="click3('=')" style="color: blue"></td>
+            <td><input type="button" value="/" onclick="click1('/')" style="color: blue"></td>
+        </tr>
+    </table>
+    <script>
+        function click1(x) {
+        document.getElementById("hienthi").value+=x;
+        }
+        function click2() {
+            document.getElementById("hienthi").value='';
+        }
+        function click3() {
+            document.getElementById("hienthi").value=eval( document.getElementById("hienthi").value);
+        }
+    </script>
+
+</body>
+</html>
