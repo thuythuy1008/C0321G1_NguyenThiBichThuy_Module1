@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<!--Bài 1-->
+<script>
+let a = parseInt(prompt("nhập a"));
+let b = parseInt(prompt("nhập b"));
+if (a%b==0){
+    alert("a chia hết cho b");
+} else {
+    alert("a không chia hết cho b");
+}
+</script>
+
+<!--Bài 2-->
+<script>
+    let tuoi = parseInt(prompt("nhập tuổi"));
+    if (tuoi>=16){
+        alert("học sinh đủ điều kiện vào học lớp 10");
+    } else {
+        alert("học sinh không đủ điều kiện vào học lớp 10");
+    }
+</script>
+
+<!--Bài 3-->
+<script>
+    let c = parseInt(prompt("nhập số"));
+    if (c>0){
+        alert("số này lớn hơn 0");
+    } else if (c==0){
+        alert("số này bằng 0");
+    } else {
+        alert("số này nhỏ hơn 0");
+    }
+</script>
+
+<!--Bài 4-->
+<script>
+    let e = parseInt(prompt("nhập số"));
+    let f = parseInt(prompt("nhập số"));
+    let g = parseInt(prompt("nhập số"));
+    if (e>f){
+        if (e>g){
+            alert("e là số lớn nhất:" + e);
+        }
+    } else if (f>g){
+        alert("f là số lớn nhất:" + f);
+    } else {
+        alert("g là số lớn nhất:" + g);
+    }
+</script>
+
+<!--Bài 5-->
+<script>
+    let h = parseInt(prompt("Điểm bài kiểm tra"));
+    let i = parseInt(prompt("Điểm thi giữa kỳ"));
+    let k = parseInt(prompt("Điểm thi cuối kỳ"));
+    let TB = (h + i + k)/3;
+    if (TB>=8.5){
+        alert("Học sinh Giỏi");
+    } else if (TB>=7) {
+        alert("Học sinh Khá");
+    } else if (TB>=5){
+        alert("Học sinh Trung Bình");
+    } else {
+        alert("Học sinh Yếu");
+    }
+</script>
+
+<!--Bài 6-->
+<!--Cách 1-->
+<script>
+    let l = parseInt(prompt("doanh số bán hàng"));
+    let hoahong = l *0.05;
+    if (l>10000){
+        alert("hoa hồng nhận được:" + hoahong);
+    } else if (l>=5000){
+        alert("hoa hồng nhận được:" + hoahong);
+    } else {
+        alert("hoa hồng nhận được:" + hoahong);
+    }
+</script>
+
+<!--Cách 2-->
+<script>
+    let l = parseInt(prompt("doanh số bán hàng"));
+    if (l<10000){
+        alert("hoa hồng nhận được:" + l*0.15);
+    } else if (l<=5000){
+        alert("hoa hồng nhận được:" +l*0.09);
+    } else {
+        alert("hoa hồng nhận được:" +l*0.05);
+    }
+</script>
+
+<!--Bài 7-->
+<!--Cách 1-->
+<script>
+    let goi = parseInt(prompt("số phút gọi"));
+    let tinnhan = parseInt(prompt("số tin nhắn"));
+    let data = parseInt(prompt("lưu lượng data GB"));
+    if (goi>200 && tinnhan>200 && data>50){
+        alert("Số tiền cấn thanh toán là:" + goi*500+tinnhan*200+data*3.000);
+    } else if (goi>100 && tinnhan>100 && data>30){
+        alert("Số tiền cấn thanh toán là:" + goi*1.000+tinnhan*250+data*4.000);
+    } else {
+        alert("Số tiền cấn thanh toán là:" + goi*1.500+tinnhan*300+data*5.000);
+    }
+</script>
+<!--Cách 2-->
+<script>
+    let goi = parseInt(prompt("số phút gọi"));
+    let tinnhan = parseInt(prompt("số tin nhắn"));
+    let data = parseInt(prompt("lưu lượng data GB"));
+    let tien1 = goi * 1.500;
+    let tien2 = tinnhan * 200;
+    let tien3 = data * 5.000;
+    if (goi<10){
+        alert("Cước điện thoại:" + tien2+tien3);
+    } else {
+        alert("Cước điện thoại:" + tien1+tien2+tien3);
+    }
+</script>
+</body>
+</html>
