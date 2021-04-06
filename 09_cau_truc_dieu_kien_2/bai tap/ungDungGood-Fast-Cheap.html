@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng good-fast-cheap</title>
+    <style>
+        *{
+            margin: auto;
+            margin-top: 30px;
+        }
+        div{
+            width: 300px;
+            height: 200px;
+            background-color: #fefb00;
+        }
+        .h1{
+            width: 40px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+<table>
+    <tr>
+        <td><input id="thanh1" type="range" min="0" max="1" value="0" onclick="thanh1('1')"></td>
+        <td><h3>GOOD</h3></td>
+    </tr>
+    <tr>
+        <td><input id="thanh2" type="range" min="0" max="1" value="1" onclick="thanh1('2')"></td>
+        <td><h3>CHEAP</h3></td>
+    </tr>
+    <tr>
+        <td><input id="thanh3" type="range" min="0" max="1" value="1" onclick="thanh1('3')"></td>
+        <td><h3>FAST</h3></td>
+    </tr>
+</table>
+</div>
+<script>
+
+    function thanh1(x) {
+        switch (x) {
+        case "1":
+            document.getElementById('thanh2').value=0
+                break;
+        case "2":
+            document.getElementById('thanh3').value=0
+                break;
+        case "3":
+            document.getElementById('thanh1').value=0
+                break;
+        }
+    }
+</script>
+</body>
+</html>

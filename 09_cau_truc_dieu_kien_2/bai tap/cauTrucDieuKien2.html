@@ -230,11 +230,12 @@
     function tinhlai() {
         let e2 = parseFloat(document.getElementById("e").value);
         let e3 = parseFloat(document.getElementById("e1").value);
-        let laisuat = 0.07;
-        if (e2==1000000 && e3==6){
-            document.getElementById("tien").innerText=( 10000000*laisuat/12*6).toFixed(0);
+        let laisuat1 = 0.07;
+        let laisuat2 = 0.06;
+        if (e2<=1000000){
+            document.getElementById("tien").innerText=( e2*laisuat1/12*e3).toFixed(0);
         } else {
-        document.getElementById("tien").innerText=( e2*laisuat/12*e3).toFixed(0);
+        document.getElementById("tien").innerText=( e2*laisuat2/12*e3).toFixed(0);
         }
     }
 </script>
