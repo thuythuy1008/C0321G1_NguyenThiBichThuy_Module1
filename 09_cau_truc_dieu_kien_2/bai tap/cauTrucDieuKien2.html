@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02</title>
+</head>
+<body>
+<!--Bài 1: Chuyển từ độ C sang độ F-->
+<input type="number" id="a1" placeholder="nhập Độ C">
+<input type="button" value="Chuyển độ C sang độ F" onclick="tinh()">
+<script>
+    function tinh() {
+        let a = document.getElementById("a1").value;
+        switch (a) {
+            case "10":
+                document.write("Độ F=" + parseInt(10*9/5+32))
+                break;
+            case "50":
+                document.write("Độ F=" + parseInt(50*9/5+32))
+                break;
+            default :
+                document.write("Độ F=" + parseInt(a*9/5+32))
+        }
+    }
+</script>
+
+<!--Bài 2: Chuyển từ mét sang feet-->
+<input type="number" id="a2" placeholder="nhập mét">
+<input type="button" value="Chuyển mét sang feet" onclick="tinh1()">
+<script>
+    function tinh1() {
+        let b = document.getElementById("a2").value;
+        switch (b) {
+            case "10":
+                document.write("feet=" + parseInt(10*3.2802))
+                break;
+            case "50":
+                document.write("feet=" + parseInt(50*3.2808))
+                break;
+            default :
+                document.write("feet=" + parseInt(b*3.2808))
+        }
+    }
+</script>
+
+<!--Bài 3: Tính diện tích hình vuông khi biết cạnh a-->
+<input type="number" id="a3" placeholder="nhập cạnh a">
+<input type="button" value="Diện tích" onclick="tinh2()">
+<script>
+    function tinh2() {
+        let c = document.getElementById("a3").value;
+        switch (c) {
+            case "5":
+                document.write("Diện tích=" + parseInt(5*5))
+                break;
+            case "10":
+                document.write("Diện tích=" + parseInt(10*10))
+                break;
+            default :
+                document.write("Diện tích=" + parseInt(c*c))
+        }
+    }
+</script>
+
+<!--Bài 4: Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b-->
+<input type="number" id="a4" placeholder="nhập cạnh a">
+<input type="number" id="a5" placeholder="nhập cạnh b">
+<input type="button" value="Diện tích" onclick="tinh3()">
+<script>
+    function tinh3() {
+        let d = document.getElementById("a4").value;
+        let e = document.getElementById("a5").value;
+        let f = parseInt(d*e);
+   if (d==5 && e==4){
+       document.write("Diện tích=" + f);
+   } else if (d==6 && e==8){
+       document.write("Diện tích=" + f);
+   } else {
+       document.write("Diện tích=" + f);
+   }
+    }
+</script>
+
+<!--Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b-->
+<input type="number" id="a6" placeholder="nhập cạnh a">
+<input type="number" id="a7" placeholder="nhập cạnh b">
+<input type="button" value="Diện tích" onclick="tinh3()">
+<script>
+    function tinh3() {
+        let g = document.getElementById("a6").value;
+        let h = document.getElementById("a7").value;
+        let i = parseInt(g*h)/2;
+        if (g==5 && h==4){
+            document.write("Diện tích=" + i);
+        } else if (g==6 && h==8){
+            document.write("Diện tích=" + i);
+        } else {
+            document.write("Diện tích=" + i);
+        }
+    }
+</script>
+
+<!--Bài 6: Giải phương trình bậc 1-->
+<input type="number" id="a8" placeholder="nhập a">
+<input type="number" id="a9" placeholder="nhập b">
+<input type="button" value="Tính nghiệm" onclick="tinh4()">
+<script>
+    function tinh4() {
+        let k = document.getElementById("a8").value;
+        let l = document.getElementById("a9").value;
+        let x = parseInt(-k/l);
+        if (k==0){
+            if (l==0) {
+                document.write("Phương trình vô số nghiệm");
+            } else {
+                document.write("Phương trình vô nghiệm");
+            }
+        }else {
+            document.write("nghiệm của phương trình là:" + x);
+        }
+    }
+</script>
+
+<!--Bài 7: Giải phương trình bậc 2-->
+<input type="number" id="b" placeholder="nhập a">
+<input type="number" id="b1" placeholder="nhập b">
+<input type="number" id="b2" placeholder="nhập c">
+<input type="button" value="Tính nghiệm" onclick="tinh5()">
+<script>
+    function tinh5() {
+        let m = document.getElementById("b").value;
+        let n = document.getElementById("b1").value;
+        let t = document.getElementById("b2").value;
+        let q = parseInt(n**2-4*m*t);
+        if (q<0){
+            document.write("Phương trình vô nghiệm");
+        } else if (q==0){
+            document.write("Phương trình có nghiệm kép:" + (-n/(2*m)));
+        } else {
+            document.write("Phương trình có nghiệm 1 là:" + (-n + Math.sqrt(q))/(2*m)+'<br>');
+            document.write("Phương trình có nghiệm 2 là:" + (-n - Math.sqrt(q))/(2*m));
+        }
+    }
+</script>
+
+<!--Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không-->
+<input type="number" id="c" placeholder="nhập tuổi">
+<input type="button" value="Có phải là tuổi của 1 người không?" onclick="tuoi()">
+<script>
+    function tuoi() {
+        let v = document.getElementById("c").value;
+        if (0<v<120 && v==parseInt(v)){
+            document.write("Đây là tuổi của 1 người");
+        } else {
+            document.write("Đây không phải là tuổi của 1 người");
+        }
+    }
+</script>
+
+<!--Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác-->
+<input type="number" id="c1" placeholder="nhập a">
+<input type="number" id="c2" placeholder="nhập b">
+<input type="number" id="c3" placeholder="nhập c">
+<input type="button" value="Có phải là cạnh của 1 tam giác không?" onclick="kiemtra()">
+<script>
+    function kiemtra() {
+        let a1 = document.getElementById("c1").value;
+        let a2 = document.getElementById("c2").value;
+        let a3 = document.getElementById("c3").value;
+        if (a1,a2,a3 > 0 && a1+a2 > a3 && a2+a3 > a1 && a3+a1 > a2){
+            document.write("a,b,c là cạnh của một tam giác");
+        }else {
+            document.write("a,b,c không là cạnh của một tam giác");
+        }
+    }
+</script>
+
+<!--Bài 10: Viết chương trình tính giá điện-->
+<input type="number" id="c4" placeholder="nhập số chữ điện">
+<input type="button" value="Tính giá điện?" onclick="tinhtien()">
+<script>
+    function tinhtien() {
+    let b1 = parseInt(document.getElementById("c4").value);
+    if (b1<=50){
+        document.write("Giá điện là:" + b1*1.678);
+    } else if (b1<=100){
+        document.write("Giá điện là:" + (50*1.678+(b1-50)*1.734));
+    } else if (b1<=200){
+        document.write("Giá điện là:" + (50*1.678+50*1.734+(b1-100)*2.014));
+    } else if (b1<=300){
+        document.write("Giá điện là:" + (50*1.678+50*1.734+100*2.014+(b1-200)*2.536));
+    } else if (b1<=400){
+        document.write("Giá điện là:" + (50*1.678+50*1.734+100*2.014+100*2.536+(b1-300)*2.834));
+    } else {
+        document.write("Giá điện là:" + (50*1.678+50*1.734+100*2.014+100*2.536+100*2.834+(b1-400)*2.937));
+    }
+    }
+</script>
+
+<!--Bài 11: Viết chương trình tính thuế thu nhập cá nhân-->
+<input type="number" id="d" placeholder="thu nhập của tháng tính theo triệu đồng">
+<input type="button" value="Tính thuế thu nhập cá nhân?" onclick="tinhthue()">
+<script>
+    function tinhthue() {
+        let d1 = parseFloat(document.getElementById("d").value);
+        if (d1<=5){
+            document.write("Thuế thu nhập cá nhân là:" + d1*0.05);
+        } else if (d1<=10){
+            document.write("Thuế thu nhập cá nhân là:" + (0.25+(d1-5)*0.1));
+        } else if (d1<=18){
+            document.write("Thuế thu nhập cá nhân là:" + (0.75+(d1-10)*0.15));
+        }  else if (d1<=32){
+            document.write("Thuế thu nhập cá nhân là:" + (1.95+(d1-18)*0.2));
+        }  else if (d1<=52){
+            document.write("Thuế thu nhập cá nhân là:" + (4.75+(d1-32)*0.25));
+        }  else if (d1<=80){
+            document.write("Thuế thu nhập cá nhân là:" + (9.75+(d1-52)*0.3));
+        }  else if (d1>80){
+            document.write("Thuế thu nhập cá nhân là:" + (18.15+(d1-80)*0.35));
+        }
+    }
+</script>
+
+<!--Bài 12: Viết chương trình tính lãi ngân hàng -->
+<input type="number" id="e" placeholder="số tiền gửi">
+<input type="number" id="e1" placeholder="số tháng gửi">
+<input type="button" value="Tính tiền lãi" onclick="tinhlai()">
+<p id="tien"></p>
+<script>
+    function tinhlai() {
+        let e2 = parseFloat(document.getElementById("e").value);
+        let e3 = parseFloat(document.getElementById("e1").value);
+        let laisuat = 0.07;
+        if (e2==1000000 && e3==6){
+            document.getElementById("tien").innerText=( 10000000*laisuat/12*6).toFixed(0);
+        } else {
+        document.getElementById("tien").innerText=( e2*laisuat/12*e3).toFixed(0);
+        }
+    }
+</script>
+</body>
+</html>
