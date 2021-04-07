@@ -9,8 +9,12 @@
     let value = null;
     do {
         value = prompt("Nhập vào số từ 1 -> 10");
+        if (value < 1 || value > 10){
+            alert("Số bạn vừa nhập là sai.Yêu cầu nhập lại");
+        } else {
+            alert("Số bạn vừa nhập là " + value);
+        }
     } while (value < 1 || value > 10);
-    alert("Số bạn vừa nhập là " + value);
 </script>
 </body>
 </html>
