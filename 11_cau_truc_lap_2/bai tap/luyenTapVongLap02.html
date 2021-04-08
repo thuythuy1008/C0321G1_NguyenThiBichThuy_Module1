@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 02</title>
+</head>
+<body>
+<!--Bài 1: In dãy Finonaci-->
+<script>
+    let d=prompt("Bạn muốn in ra bao nhiêu số trong dãy finonaci?");
+    let count=0;
+   let a=0;
+   let b=1;
+   let c;
+   while (count<d){
+       c=a;
+       a=a+b;
+       b=c;
+       console.log(c);
+       count++;
+   }
+</script>
+
+
+<!--Bài 2: Tính giai thừa của một số nguyên dương-->
+<script>
+    let a=parseInt(prompt("Nhập 1 số nguyên dương"));
+    let tong=1;
+    for (let i = 1; i <=a ; i++) {
+        tong=tong*i;
+    }
+    alert(tong);
+</script>
+
+
+<!--Bài 3: In tam giác vuông-->
+<!--Hình 1-->
+<script>
+    for (let i = 1; i <6; i++) {
+        for (let j = 0; j < i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>
+
+<!--Hình 2-->
+<script>
+    for (let i = 1; i < 6; i++) {
+        for (let j = i; j <6 ; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>
+
+
+<!--Hình 3-->
+<script>
+    for (let i = 0; i <6; i++) {
+        for (let j = 1; j <6; j++) {
+            if (j<6-i){
+                document.write("&nbsp&nbsp");
+            } else {
+                document.write("*");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+
+
+<!--Hình 4-->
+<script>
+    for (let i = 0; i <6; i++) {
+        for (let j = 6; j > 0; j--) {
+            if (j>6-i){
+                document.write("&nbsp&nbsp");
+            } else {
+                document.write("*");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+
+
+<!--Bài 4: In hình chữ nhật-->
+<script>
+    for (let i = 0; i <= 7; i++) {
+        for (let j = 0; j <= 21; j++) {
+            if (i == 0 || i == 7 || j==0 || j==21) {
+                document.write("*");
+            } else {
+                document.write("&nbsp&nbsp");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+
+
+<!--Bài 5: Viết chương trình tính lãi ngân hàng-->
+<!--khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng-->
+<script>
+    let tiengoc=parseFloat(prompt("Nhập tiền gốc theo triệu đồng"));
+    let n=prompt("Số tháng gửi");
+    let laisuat=0.07;
+    let tong= 0;
+        for (let i = 1; i <= n ; i++) {
+            tong+=tiengoc*laisuat+tiengoc;
+        }
+        document.write(tong);
+</script>
+</body>
+</html>
