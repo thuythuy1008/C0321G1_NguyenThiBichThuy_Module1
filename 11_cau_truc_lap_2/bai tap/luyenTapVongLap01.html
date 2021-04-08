@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<!--Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành-->
+<script>
+    let count=0;
+    for (let i=1;i<=100;i++ ){
+        console.log(i);
+        count++;
+        if(count==99){
+            console.log("hoàn thành");
+        }
+    }
+</script>
+
+
+<!--Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập-->
+<script>
+    let a = parseInt(prompt("nhập nhiệt độ"));
+    while (a>100){
+        alert("Yêu cầu giảm nhiệt độ");
+    }
+    while (a<20){
+        alert("Yêu cầu tăng nhiệt độ");
+    }
+    while (20<=a<=100){
+        alert("Nhiệt độ là:" +a);
+    }
+</script>
+
+
+<!--Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên-->
+<script>
+let a=0;
+let b=1;
+let c;
+let d='';
+for (let i = 0; i <20 ; i++) {
+    c=a;
+    a=a+b;
+    b=c;
+    d+=c+',';
+}
+alert(d+" ");
+</script>
+
+
+<!--Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5-->
+<script>
+    let a=1;
+    let b=1;
+    let c;
+    let count=0;
+    let number=0;
+    let check=true;
+    while (check){
+        c=a;
+        a=a+b;
+        b=c;
+        if (c%5===0){
+            alert("Số đầu tiên chia hết cho 5 là:"+c);
+            break;
+        }
+    }
+</script>
+
+
+<!--Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci-->
+<script>
+    let a=0;
+    let b=1;
+    let c;
+    let tong=0;
+    for (let i = 0; i <20 ; i++) {
+        c=a;
+        a=a+b;
+        b=c;
+        tong+=c;
+    }
+    alert(tong);
+</script>
+
+
+<!--Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên-->
+<script>
+    let a=1;
+    let tong=0;
+    let count=0;
+    while (count<30){
+        let c=true;
+        for (let i = 0; i <a ; i++) {
+            if (a%7!=0){
+                c=false;
+                break;
+            }
+        }
+        if (c){
+            tong+=a;
+            count++;
+        }
+        a++;
+    }
+    alert(tong);
+</script>
+
+
+<!--Bài 7: viết một chương trình in ra các số từ 1 đến 100-->
+<!--nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó-->
+<!--nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz"-->
+<script>
+    for (let i = 1; i <=100 ; i++) {
+        if (i%3==0){
+            if (i%5==0){
+                console.log("FizzBuzz");
+                continue;
+            } else {
+                console.log("Fizz");
+                continue;
+            }
+        }
+        if (i%5==0){
+            console.log("Buzz");
+            continue;
+        }
+        console.log(i);
+    }
+</script>
+
+
+<!--Bài 8: Game đoán số-->
+<form>
+    <input id="mau" type="button" value="Chơi" onclick="choi()">
+</form>
+<style>
+    #mau{
+        width: 100px;
+        height: 50px;
+        background-color: antiquewhite;
+        color: red;
+    }
+</style>
+<script>
+    function choi() {
+        let max =parseInt(prompt("nhập max"));
+        let min =parseInt(prompt("nhập min"));
+        a=Math.round(Math.random()* (max+min-1))- min;
+        luotchoi=0;
+        do {
+            let b=parseInt(prompt("Nhâp số của bạn"));
+            if (b>a){
+                alert("số của bạn lớn hơn số đã chọn");
+            } else if (b<a){
+                alert("số của bạn nhỏ hơn số đã chọn");
+            } else {
+                alert("Chúc mừng! Bạn đã chiến thắng");
+                break;
+            }
+            luotchoi++;
+        } while (luotchoi<3);
+    }
+</script>
+</body>
+</html>
