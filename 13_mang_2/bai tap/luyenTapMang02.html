@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02</title>
+</head>
+<body>
+<script>
+// Bài 1: Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng
+let a = [
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7]
+];
+//Cách 1
+for (let i = 0; i <5 ; i++) {
+    console.log("Row:"+i);
+    for (let j = 0; j <4 ; j++) {
+        console.log(a[i][j]);
+    }
+}
+
+//Cách 2
+   for (let i in a){
+       console.log("Row:"+i);
+       for (let j in a[i]){
+           console.log(" " + a[i][j]);
+       }
+   }
+
+// Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+//cách 1
+    let n;
+    do {
+        n = prompt(" nhập vào số lượng phần tử của mảng")
+    }while (!(0<n&&n<=20));
+    let arr= new Array(n);
+    for (let i=0;i<n;i++){
+        arr[i]= prompt(" nhập phần tử thứ: "+ i);
+    }
+    alert("mảng ban đầu"+arr);
+    let first = 0;
+    let last = arr.length - 1;
+    while (first < last) {
+        let b = arr[first];
+        arr[first] = arr[last];
+        arr[last] = b;
+        first++;
+        last--;
+    }
+    document.write(arr);
+
+//cách 2
+    let n;
+    do {
+        n = prompt(" nhập vào số lượng phần tử của mảng")
+    }while (!(0<n&&n<=20));
+    let arr= new Array(n);
+    for (let i=0;i<n;i++){
+        arr[i]= prompt(" nhập phần tử thứ: "+ i);
+    }
+    alert("mảng ban đầu" +arr);
+    arr.reverse();
+    alert("mảng đảo ngược" +arr);
+
+//Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+// Chương trình này đếm số ký tự số trong mảng.
+    let a = [
+        [1, 2, -1, "a"],
+        ["c", 11, 9, 4],
+        [7, 0, -7, "n"],
+        [7, -4,"m", 4],
+        [3, "d", 6, -7]
+    ];
+    let count=0;
+    for (let i = 0; i <a.length ; i++) {
+        for (let j = 0; j <a[i].length ; j++) {
+            if (!isNaN(a[i][j])){
+                count++;
+            }
+        }
+    }
+    alert(count);
+
+
+//    Bài 4: Viết một chương trình để đếm số từ trong một chuỗi
+    let n=prompt().split(" ");
+    let count=0;
+    for (let i = 0; i < n.length; i++) {
+        if (isNaN(n[i])){
+            count++;
+        }
+    }
+    alert(count);
+
+
+//Bài 6: Viết chương trình nhập vào một mảng ký tự,
+// tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
+    let a = [
+        [1, 2, "-", "a"],
+        ["c", 11, "-", 4],
+        [7, 0, "-", "n"],
+        [7, "-","m", 4],
+        [3, "d", 6, "-"]
+    ];
+    for (let i = 0; i <a.length ; i++) {
+        for (let j = 0; j <a[i].length ; j++) {
+            if (a[i][j]=="-"){
+                a[i].splice(j,1,"_");
+                 // hoặc có thể gán a[i][j]="_";
+            }
+        }
+    }
+    console.log(a);
+
+
+//    Bài 5: Viết một chương trình nhập vào 2 chuỗi,
+//    sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+    let a=prompt("Nhập vào chuỗi 1");
+    let b=prompt("Nhập vào chuỗi 2");
+    let arr1=Array.from(a);
+    let arr2=Array.from(b);
+    let check=true;
+    if (arr1.length==arr2.length){
+        for (let i in arr1){
+            if (arr1[i]!=arr2[i]){
+                check=false;
+                alert("Hai chuỗi khác nhau");
+                break;
+            }else {
+                alert("Hai chuỗi giống nhau");
+                break;
+            }
+        }
+    } else {
+        alert("Hai chuỗi khác nhau");
+    }
+
+</script>
+</body>
+</html>

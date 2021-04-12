@@ -74,12 +74,13 @@
 //    Bài 6 Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập phần tử số nguyên V.
 //    Chương trình tìm xem V có nằm trong mảng số nguyên không?
 //    Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+//cách 1
     let a=10;
     let arr= new Array(a);
     for (let i=0;i<a;i++){
         arr[i]= prompt(" nhập phần tử thứ: "+ i);
     }
-    alert("mảng bàn đầu"+arr);
+    alert("mảng ban đầu"+arr);
     let V=prompt("Nhập 1 phần tử số nguyên");
     for (let i = 0; i <10 ; i++) {
           if (arr[i]==V) {
@@ -90,17 +91,33 @@
           }
     }
 
+//cách 2
+    let a=10;
+    let arr= new Array(a);
+    for (let i=0;i<a;i++){
+        arr[i]= prompt(" nhập phần tử thứ: "+ i);
+    }
+    alert("mảng ban đầu"+arr);
+    let V=prompt("Nhập 1 phần tử số nguyên");
+    let b=arr.indexOf(V);
+    if (b!==-1){
+        alert("V is in the array");
+    } else {
+        alert("V is not in the array");
+    }
+
 
 //    Bài 7 khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
 //    Chương trình kiểm tra V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng
 //    dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng
+//cách 1
     let a=10;
     let index=0;
     let arr= new Array(a);
     for (let i=0;i<a;i++){
         arr[i]= prompt(" nhập phần tử thứ: "+ i);
     }
-    alert("mảng bàn đầu"+arr);
+    alert("mảng ban đầu"+arr);
     let V=prompt("Nhập 1 phần tử số nguyên");
     for (let i = 0; i <10 ; i++) {
         if (arr[i]==V) {
@@ -113,6 +130,24 @@
         } else {
             alert("V is not in the array");
         }
+    }
+
+    //cách 2
+    let a=10;
+    let arr= new Array(a);
+    for (let i=0;i<a;i++){
+        arr[i]= prompt(" nhập phần tử thứ: "+ i);
+    }
+    alert("mảng ban đầu"+arr);
+    let V=prompt("Nhập 1 phần tử số nguyên");
+    let b=arr.indexOf(V);
+    if (b!==-1){
+        alert("V is in the array");
+            arr.splice(b,1);
+            arr.push(0);
+            alert(arr);
+    } else {
+        alert("V is not in the array");
     }
 
 
