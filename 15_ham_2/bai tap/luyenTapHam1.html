@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<script>
+// Bài 1
+    function displayMessage(message) {
+        alert(message);
+    }
+    displayMessage("Xin chào");
+
+
+// Bài 2
+    function number(num) {
+        num++;
+        alert(num);
+    }
+    let num=4;
+    number(num);
+    alert(num);
+
+
+// Bài 3
+    function so(a,b) {
+    if (a>b){
+        alert("Số thứ nhất lớn hơn số thứ hai");
+    }else {
+        c= a + b;
+        return c;
+        }
+    }
+    let a=parseInt(prompt("Nhập a"));
+    let b=parseInt(prompt("Nhập b"));
+    let c=0;
+    so(a,b);
+    alert(c);
+
+
+//    Bài 4
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+    result = 0;
+    alert("biến result trước gọi hàm:" +result);
+    result = addNumbers();
+    alert("biến result sau gọi hàm:" +result);
+
+
+// Bài 5
+    let ngoisao=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let chomsao=["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let n=prompt("Nhập tên một ngôi sao");
+    function take() {
+        let i;
+        for (i = 0; i <ngoisao.length ; i++) {
+            if (n==ngoisao[i]){
+                alert("Chòm sao tương ứng là:" +chomsao[i]);
+                break;
+            }
+        }
+        if (n!=ngoisao[i]){
+            alert("Không tìm thấy chòm sao tương ứng");
+        }
+    }
+    take();
+</script>
+</body>
+</html>
