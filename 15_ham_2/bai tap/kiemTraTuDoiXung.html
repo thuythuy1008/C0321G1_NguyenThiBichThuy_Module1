@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    // Cách 1
+    let a = prompt("Nhập vào một chuỗi");
+    function kiemtra() {
+        for (let i = 0; i < a.length / 2; i++) {
+            if (a[i] != a[a.length - 1 - i]) {
+                alert("false");
+                return false;
+            } else {
+                alert("true");
+                return true;
+            }
+        }
+    }
+    kiemtra();
+
+    // Cách 2
+    let b = prompt("Nhập vào một chuỗi");
+    function checkDX() {
+        let dau = 0;
+        let cuoi = b.length - 1;
+        if (dau >= cuoi) {
+            alert("true");
+            return true;
+        } else if (b[dau] != b[cuoi]) {
+            alert("false");
+            return false;
+        } else {
+            b = b.slice(1, b.length - 1);
+            return checkDX();
+        }
+    }
+    checkDX();
+</script>
+</body>
+</html>
