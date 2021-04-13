@@ -44,17 +44,17 @@
             let tiengAnh=["hello","goodbye","name","morning","miss"];
             let tiengViet=["xin chào","tạm biệt","tên","buổi sáng","nhớ"];
             let a = document.getElementById("nhap").value;
-            for (let i = 0; i < tiengAnh.length; i++) {
+            let i;
+            for (i = 0; i < tiengAnh.length; i++) {
                if (a==tiengAnh[i]) {
                    document.getElementById("ketqua").innerText=tiengViet[i];
-                   break;
-               } else {
-                   document.getElementById("ketqua").innerHTML="Không có từ bạn cần tìm";
+                  break;
                }
-
+            }
+             if (a!=tiengAnh[i]){
+                document.getElementById("ketqua").innerText="Không có từ bạn cần tìm";
             }
         }
-
     </script>
 </div>
 </body>

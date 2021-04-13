@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<!--Cách 1-->
+<div>
+    <input type="number" id="a" placeholder="nhập feet">
+    <input type="button" value="chuyển đổi" onclick="footToMeter()">
+</div><br>
+<div>
+    <input type="number" id="b" placeholder="nhập meters">
+    <input type="button" value="chuyển đổi" onclick="meterToFoot()">
+</div>
+<div>
+    <p id="hienthi1"></p><br>
+    <p id="hienthi2"></p>
+</div>
+<script>
+    function footToMeter() {
+        let feet = parseInt(document.getElementById("a").value);
+        let chuyen1 = (0.305 * feet).toFixed(3);
+        document.getElementById("hienthi1").innerHTML=chuyen1;
+    }
+    function meterToFoot() {
+        let meter = parseInt(document.getElementById("b").value);
+        let chuyen2 = (3.279 * meter).toFixed(3);
+        document.getElementById("hienthi2").innerHTML=chuyen2;
+    }
+</script>
+
+<!--Cách 2-->
+<form>
+    <p>
+    <h1>Chuyển đổi giữa feet và meters</h1>
+    <input id="nhapfeet" type="number" placeholder="nhập feet"
+           oninput="footToMeter(this.value)"
+           onchange="footToMeter(this.value)">
+    </p>
+    <p>Meters: <span id="hienthiC"></span></p><br>
+    <p>
+    <input id="nhapmeter" type="number" placeholder="nhập meters"
+           oninput="meterToFoot(this.value)"
+           onchange="meterToFoot(this.value)">
+    </p>
+    <p>Feet: <span id="hienthiF"></span></p><br>
+</form>
+<script>
+    function footToMeter(Num) {
+        Num = parseInt(Num);
+        document.getElementById("hienthiC").innerHTML =(0.305 * Num).toFixed(3);
+    }
+    function meterToFoot(Num) {
+        Num = parseInt(Num);
+        document.getElementById("hienthiF").innerHTML =(3.279 * Num).toFixed(3);
+    }
+</script>
+
+</body>
+</html>
