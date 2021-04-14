@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+<script>
+    // Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+        let a=parseFloat(prompt("Nhập vào một số"));
+        let b;
+        function square() {
+            b=a**2;
+        }
+        square();
+        alert(b);
+
+
+    // Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+        let r=parseFloat(prompt("nhập bán kính"));
+        let DT;
+        let CV;
+        function acreage(){
+            DT=(r**2)*3.14;
+        }
+        function perimeter(){
+            CV=r*2*3.14;
+        }
+        acreage();
+        perimeter()
+        alert("Diện tích của hình tròn là:" +DT);
+        alert("Chu vi của hình tròn là:" +CV);
+
+
+    // Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+        let n=parseInt(prompt("Nhập vào một số"));
+        let tong=1;
+        function giaithua() {
+            for (let i = 1; i <=n ; i++) {
+                tong=tong*i;
+            }
+        }
+        giaithua();
+        alert(tong);
+
+
+    //    Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+    //    Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+        let a=parseFloat(prompt("Nhập vào một số"));
+        function kiemtra() {
+            if (!isNaN(a)){
+                alert("true");
+            } else {
+                alert("false");
+            }
+        }
+        kiemtra();
+
+
+    // Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    let a = parseInt(prompt("Nhập số thứ nhất"));
+    let b = parseInt(prompt("Nhập số thứ hai"));
+    let c = parseInt(prompt("Nhập số thứ ba"));
+    function sosanh() {
+        if (a < b) {
+            if (a < c) {
+                alert("Số nguyên có giá trị nhỏ nhất là:" +a);
+            }
+        } else if (b < c) {
+            alert("Số nguyên có giá trị nhỏ nhất là:" +b);
+        } else {
+            alert("Số nguyên có giá trị nhỏ nhất là:" +c);
+        }
+    }
+    sosanh();
+
+
+    // Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    // Nếu là nguyên dương trả về true, ngược lại trả về false.
+        let n=parseInt(prompt("Nhập vào một số"));
+            function text() {
+                if (n>0){
+                    alert("true");
+                } else {
+                    alert("false");
+                }
+            }
+            text();
+
+
+    // // Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    let a = parseInt(prompt("Nhập số thứ nhất"));
+    let b = parseInt(prompt("Nhập số thứ hai"));
+    function hoandoi() {
+        let c = a;
+        a = b;
+        b = c;
+        alert("Số thứ nhất sau khi đổi chỗ là:" + a);
+        alert("Số thứ hai sau khi đổi chỗ là:" + b);
+    }
+    hoandoi();
+
+
+    // // Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    let a;
+    do {
+        a = prompt(" nhập vào số lượng phần tử của mảng");
+    } while (!(0 < a && a <= 20));
+    let arr = new Array(a);
+    for (let i = 0; i < a; i++) {
+        arr[i] = prompt(" nhập phần tử thứ: " + i);
+    }
+    alert("mảng ban đầu là:" + arr);
+    function daomang() {
+        arr.reverse();
+        alert("mảng sau khi đảo ngược là:" + arr);
+    }
+    daomang();
+
+
+    // Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+    // kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    let n;
+    do {
+        n = prompt(" nhập vào số lượng phần tử của mảng");
+    } while (!(0 < n && n <= 20));
+    let arr1 = new Array(n);
+    for (let i = 0; i < n; i++) {
+        arr1[i] = prompt(" nhập phần tử thứ: " + i);
+    }
+    alert("mảng ban đầu là:" + arr1);
+    let m = prompt("Nhập một kí tự bất kỳ");
+    function KT(x) {
+        let dem = 0;
+        if (arr1.indexOf(m) != -1) {
+            for (let i in arr1) {
+                if (arr1[i] == m) {
+                    dem++;
+                }
+            }
+            return dem;
+        } else {
+            return -1;
+        }
+    }
+    alert(KT(arr1));
+</script>
+</body>
+</html>
