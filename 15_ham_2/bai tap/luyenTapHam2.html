@@ -18,18 +18,18 @@
 
     // Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
         let r=parseFloat(prompt("nhập bán kính"));
-        let DT;
-        let CV;
+        let dientich;
+        let chuvi;
         function acreage(){
-            DT=(r**2)*3.14;
+            dientich=(r**2)*3.14;
         }
         function perimeter(){
-            CV=r*2*3.14;
+            chuvi=r*2*3.14;
         }
         acreage();
         perimeter()
-        alert("Diện tích của hình tròn là:" +DT);
-        alert("Chu vi của hình tròn là:" +CV);
+        alert("Diện tích của hình tròn là:" +dientich);
+        alert("Chu vi của hình tròn là:" +chuvi);
 
 
     // Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
@@ -131,7 +131,7 @@
     }
     alert("mảng ban đầu là:" + arr1);
     let m = prompt("Nhập một kí tự bất kỳ");
-    function KT(x) {
+    function kiemtra(x) {
         let dem = 0;
         if (arr1.indexOf(m) != -1) {
             for (let i in arr1) {
@@ -144,7 +144,7 @@
             return -1;
         }
     }
-    alert(KT(arr1));
+    alert(kiemtra(arr1));
 </script>
 </body>
 </html>

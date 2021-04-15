@@ -14,7 +14,7 @@
     <p>
     <h1>Add New Product</h1>
     <input type="text" id="nhan" placeholder="New Product">
-    <button name="button" type="button" onclick="them()">Add</button>
+    <button name="button" type="button" onclick="add()">Add</button>
     </p>
 </form>
     <p><h1>Display All Product</h1></p>
@@ -28,33 +28,36 @@
 <p id="hienthi"></p>
 <script>
     let arr=[];
-    function them() {
+    function add() {
        let n= document.getElementById("nhan").value;
-       if (n !=""){
+       if (n !="" && arr.indexOf(n)==-1){
            arr.push(n);
        }
         hienthi1();
         document.getElementById("nhan").value='';
     }
+
     function hienthi1() {
 let bang="<table>";
         for (let i = 0; i <arr.length ; i++) {
         bang+='<tr>\n' +
             '        <th>'+arr[i]+'</th>\n' +
-            '        <th><button name="button" type="button" onclick="sua1('+i+')">Edit</button></th>\n' +
-            '        <th><button name="button" type="button" onclick="xoa('+i+')">Delete</button></th>\n' +
+            '        <th><button name="button" type="button" onclick="edit('+i+')">Edit</button></th>\n' +
+            '        <th><button name="button" type="button" onclick="delete1('+i+')">Delete</button></th>\n' +
             '    </tr>'
         }
         bang+='</table>';
         document.getElementById("hienthi").innerHTML= bang;
     }
-    function sua1(index) {
-        let thaydoi=prompt('Thông tin thay đổi');
-        arr[index]=thaydoi;
+
+    function edit(index) {
+        let change=prompt('Thông tin thay đổi');
+        arr[index]=change;
         hienthi1()
     }
-    function xoa(index) {
-        let a=confirm("are you sure?")
+
+    function delete1(index) {
+        let a=confirm("Bạn có chắc không?")
         if (a){
             arr.splice(index,1);
             hienthi1()
