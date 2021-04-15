@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="ve" width="1000px" height="1000px"></canvas>
+<script>
+    class Rectangle {
+        constructor(x, y, chieudai, chieurong) {
+            this.x = x;
+            this.y = y;
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+        }
+
+        toMauNgauNhien() {
+            let red = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            let yelow = Math.floor(Math.random() * 255);
+            return "rgb(" + red + "," + blue + "," + yelow + ")";
+        }
+
+        veHinh() {
+            let a = document.getElementById("ve").getContext("2d");
+            let b = this.toMauNgauNhien();
+            a.beginPath();
+            a.fillStyle = b;
+            a.fillRect(this.x, this.y, this.chieudai, this.chieurong);
+
+            a.fill();
+        }
+    }
+
+    let d = Math.floor(Math.random() * window.innerWidth);
+    let e = Math.floor(Math.random() * window.innerHeight);
+    let f = Math.floor(Math.random() * 1000);
+    let g = Math.floor(Math.random() * 1000);
+    let rectangle = new Rectangle(d, e, f, g);
+    rectangle.veHinh();
+</script>
+</body>
+</html>
