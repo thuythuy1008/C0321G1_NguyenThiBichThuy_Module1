@@ -19,11 +19,15 @@
             return b;
         }
     }
-    let temperature= new Temperature(25);
+    let c;
+    do {
+        c = parseInt(prompt("Nhập vào độ C"));
+    } while (c< -273);
+    let temperature= new Temperature(c);
     let m=temperature.chuyensangdoF();
     let n=temperature.chuyensangdoK();
-    alert(m);
-    alert(n);
+    alert("Độ F là:" +m);
+    alert("Độ K là:" +n);
 </script>
 </body>
 </html>
