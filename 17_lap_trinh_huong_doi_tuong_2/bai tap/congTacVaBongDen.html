@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+    class SwitchButton{
+        constructor(status) {
+            this.status=status;
+        }
+        switchOn(){
+            if (this.status==true){
+                console.log("On");
+            }else {
+                console.log("Off");
+            }
+        }
+    }
+    class ElectricLamp{
+        constructor(status) {
+            this.status=status;
+        }
+        turnOn(){
+        if (this.status.status){
+            console.log("Lighting");
+        } else {
+            console.log("Not Lighting");
+        }
+        }
+    }
+    let switchButton= new SwitchButton(true);
+    let electricLamp= new ElectricLamp(switchButton);
+    switchButton.switchOn();
+    electricLamp.turnOn();
+</script>
+</body>
+</html>
