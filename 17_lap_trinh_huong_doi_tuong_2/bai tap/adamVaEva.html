@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender) {
+                console.log("Male");
+            } else {
+                console.log("Female");
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        eatApple(apple) {
+            for (let i = 0; i < 5; i++) {
+                if (apple.weight > 0) {
+                    this.say("Ngon quá!!!")
+                    this.weight++;
+                    apple.weight--
+                }
+            }
+        }
+
+        checkApple(apple) {
+            if (apple.weight > 0) {
+                alert(apple.weight);
+            } else {
+                alert("Can not eat");
+            }
+        }
+
+        say() {
+
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+    }
+
+    class Adam extends Human {
+        constructor(name, gender, weight) {
+            super(name, gender, weight);
+        }
+
+        say(maleText) {
+            console.log("Adam:" + maleText);
+        }
+    }
+
+    class Eva extends Human {
+        constructor(name, gender, weight) {
+            super(name, gender, weight);
+        }
+
+        say(femaleText) {
+            console.log("Eva:" + femaleText);
+        }
+    }
+
+    let apple = new Apple(10);
+    let adam = new Adam("Adam", "Nam", 60);
+    let eva = new Eva("Eva", "Nữ", 45);
+    adam.eatApple(apple);
+    console.log(adam.getWeight());
+    eva.eatApple(apple);
+    console.log(eva.getWeight());
+</script>
+</body>
+</html>
