@@ -16,19 +16,11 @@
         }
     }
 
-    class Human {
+    class Person {
         constructor(name, gender, weight) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
-        }
-
-        isMale() {
-            if (this.gender) {
-                console.log("Male");
-            } else {
-                console.log("Female");
-            }
         }
 
         setGender(gender) {
@@ -75,7 +67,7 @@
 
     }
 
-    class Adam extends Human {
+    class Adam extends Person {
         constructor(name, gender, weight) {
             super(name, gender, weight);
         }
@@ -85,7 +77,7 @@
         }
     }
 
-    class Eva extends Human {
+    class Eva extends Person {
         constructor(name, gender, weight) {
             super(name, gender, weight);
         }
