@@ -16,7 +16,7 @@
         }
     }
 
-    class Person {
+    class Human {
         constructor(name, gender, weight) {
             this.name = name;
             this.gender = gender;
@@ -67,33 +67,33 @@
 
     }
 
-    class Adam extends Person {
+    class Male extends Human {
         constructor(name, gender, weight) {
             super(name, gender, weight);
         }
 
         say(maleText) {
-            console.log("Adam:" + maleText);
+            console.log("Male:" + maleText);
         }
     }
 
-    class Eva extends Person {
+    class Female extends Human {
         constructor(name, gender, weight) {
             super(name, gender, weight);
         }
 
         say(femaleText) {
-            console.log("Eva:" + femaleText);
+            console.log("Female:" + femaleText);
         }
     }
 
     let apple = new Apple(10);
-    let adam = new Adam("Adam", "Nam", 60);
-    let eva = new Eva("Eva", "Nữ", 45);
-    adam.eatApple(apple);
-    console.log(adam.getWeight());
-    eva.eatApple(apple);
-    console.log(eva.getWeight());
+    let male = new Male("Adam", "Nam", 60);
+    let female = new Female("Eva", "Nữ", 45);
+    male.eatApple(apple);
+    console.log(male.getWeight());
+    female.eatApple(apple);
+    console.log(female.getWeight());
 </script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng lại quá trình mèo bắt chuột và ăn chuột</title>
+</head>
+<body>
+<script>
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+
+        }
+
+        say() {
+
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Mouse extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this.status = status;
+        }
+
+        say(mouseText) {
+            console.log("Mouse:" + mouseText);
+        }
+    }
+
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+        say(catText) {
+            console.log("Cat:" + catText);
+        }
+
+        eat(mouse) {
+            if (mouse.status == "sống") {
+                this.weight += mouse.weight;
+                this.say("Mồi ngon!");
+            } else {
+                this.say("Chết rồi, không ăn!");
+            }
+        }
+
+        catch(mouse) {
+            if (this.speed > mouse.speed) {
+                this.say("A!!!Bắt được rồi!");
+                this.eat(mouse);
+            } else {
+                mouse.say("Còn lâu mới bắt được ta.haha");
+            }
+        }
+
+    }
+
+    let a = [];
+    let mouse1 = new Mouse("Mickey", 1, 4, "sống");
+    let mouse2 = new Mouse("Remy", 1, 8, "sống");
+    let mouse3 = new Mouse("Roddy", 1, 4, "chết");
+    let mouse4 = new Mouse("Jerry", 1, 15, "sống");
+    let mouse5 = new Mouse("Stuart Little", 1, 5, "chết");
+    a.push(mouse1, mouse2, mouse3, mouse4, mouse5);
+    let cat = new Cat("Tom", 5, 10);
+    for (let mouse of a) {
+        cat.catch(mouse);
+    }
+    console.log(cat.getWeight());
+</script>
+</body>
+</html>
