@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luong=parseFloat(prompt("Nhập lương của bạn!"));
+    let thue;
+    let thucnhan;
+    if (luong>15000000){
+        thue=7000000*0.05+8000000*0.1+(luong-15000000)*0.2;
+        thucnhan=luong-thue;
+        alert(thucnhan);
+    } else if (luong>7000000){
+        thue=7000000*0.05+(luong-7000000)*0.1;
+        thucnhan=luong-thue;
+        alert(thucnhan);
+    } else {
+        thue=luong*0.05;
+        thucnhan=luong-thue;
+        alert(thucnhan);
+    }
+</script>
+</body>
+</html>

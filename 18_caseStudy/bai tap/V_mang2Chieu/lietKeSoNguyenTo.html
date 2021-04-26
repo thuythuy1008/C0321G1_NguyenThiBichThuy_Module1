@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [];
+    let count = 0;
+    let number1 = 2;
+    while (count < 20) {
+        let check = true;
+        for (let i = 2; i < number1; i++) {
+            if (number1 % i === 0) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            arr1.push(number1);
+            count++;
+        }
+        number1++;
+    }
+    alert("Mảng chứa số nguyên tố là:" + arr1);
+    let n;
+    let m;
+    let arr3 = [];
+    do {
+        n = prompt(" nhập vào chiều dài của mảng 1");
+        m = prompt(" nhập vào chiều dài của mảng 2");
+    } while (!(0 < n && n <= 20) && (!(0 < m && m <= 20)));
+    let arr2 = new Array(n);
+    for (let i = 0; i < n; i++) {
+        arr2[i] = new Array(m)
+        for (let j = 0; j < m; j++) {
+            arr2[i][j] = prompt(" nhập phần tử thứ: " + i + j);
+            for (let k = 0; k < arr1.length; k++) {
+                if (arr2[i][j]==arr1[k]) {
+                    arr3.push(arr2[i][j]);
+                }
+            }
+        }
+    }
+    alert("Mảng ban đầu là:" + arr2);
+    alert("Có" + arr3.length + " số nguyên tố có trong mảng ban đầu" + " Các số nguyên tố đó là:" + arr3);
+</script>
+</body>
+</html>

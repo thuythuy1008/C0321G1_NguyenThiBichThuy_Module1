@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Cách 1:
+        let n=prompt("Nhập vào xâu kí tự").toLowerCase().split(' ');
+        alert(n);
+        let arr=[];
+        for (let i = 0; i <n.length ; i++) {
+            if (n[i].length>0){
+                arr.push(n[i]);
+            }
+        }
+
+        for (let i = 0; i <arr.length ; i++) {
+            arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+        }
+        arr=arr.join(" ");
+        alert(arr);
+
+
+    // Cách 2:
+
+    function main() {
+        let n = prompt("Nhập vào xâu kí tự").toLowerCase().split(' ');
+        alert("Xâu trước khi chuẩn hóa là:" + n);
+
+        function change() {
+            let arr = [];
+            for (let i = 0; i < n.length; i++) {
+                if (n[i].length > 0) {
+                    arr.push(n[i]);
+                }
+            }
+
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+            }
+            arr = arr.join(" ");
+            alert("Xâu sau khi chuẩn hóa là:" + arr);
+
+            function longChar() {
+                arr = arr.split(' ');
+                let index=0;
+                let maxChar = arr[0].length;
+                for (let i = 0; i < arr.length; i++) {
+                    if (maxChar < arr[i].length) {
+                        maxChar = arr[i].length;
+                        index=i;
+                    }
+                }
+                alert("Từ dài nhất trong xâu là:" + arr[index]);
+            }
+
+            longChar();
+        }
+
+        change();
+
+    }
+
+    main();
+
+</script>
+</body>
+</html>

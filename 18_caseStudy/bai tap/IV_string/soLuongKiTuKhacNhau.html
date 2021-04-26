@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1=prompt("Nhập vào một chuỗi").split('');
+    let arr2=[];
+    for (let i = 0; i <arr1.length ; i++) {
+        if (arr2.indexOf(arr1[i])==-1){
+            arr2.push(arr1[i]);
+        }
+    }
+    alert("Có" + arr2.length + " kí tự khác nhau là: " + arr2);
+</script>
+</body>
+</html>

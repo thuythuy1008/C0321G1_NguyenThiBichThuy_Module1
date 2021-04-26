@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let m;
+    let tong=0;
+    do {
+        n = prompt(" nhập vào chiều dài của mảng 1");
+        m = prompt(" nhập vào chiều dài của mảng 2");
+    }while (!(0<n&&n<=20) && (!(0<m&&m<=20)));
+    let arr= new Array(n);
+    for (let i=0;i<n;i++){
+        arr[i]=new Array(m)
+        for (let j=0;j<m;j++){
+            arr[i][j]= parseInt(prompt(" nhập phần tử thứ: "+ i + j));
+            if (arr[i][j]%2==0){
+                tong+=arr[i][j];
+            }
+        }
+    }
+    alert("mảng ban đầu"+arr+ "\n Tổng các số chẵn là:" +tong);
+</script>
+</body>
+</html>

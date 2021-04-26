@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [4, 5, 3];
+    let b = [5, 2, 6];
+    let c = [];
+    for (let i = 0; i < a.length; i++) {
+        let d = a[i] / b[i];
+        c.push(d);
+    }
+    alert("Mảng chứa các phân số là:" + c);
+    let max = c[0];
+    for (let i = 0; i < c.length; i++) {
+        if (c[i] > max) {
+            max = c[i];
+            alert("Phân số lớn nhất là " + max + " chỉ số của phân số lớn nhất là: " + i);
+        }
+    }
+</script>
+</body>
+</html>

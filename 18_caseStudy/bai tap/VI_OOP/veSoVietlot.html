@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 200px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: blue">Xổ Số Vietlot</h1>
+<table border="1">
+    <tr>
+        <th id="1"></th>
+        <th id="2"></th>
+        <th id="3"></th>
+        <th id="4"></th>
+        <th id="5"></th>
+        <th id="6"></th>
+    </tr>
+</table>
+<br>
+<input type="button" value="Mua Vé Số" onclick="muaVeSo()">
+<input type="button" value="Xem Kết Quả" onclick="ketQua()">
+<script>
+    class Vietlot {
+        constructor(so1, so2, so3, so4, so5, so6) {
+            this.so1 = so1;
+            this.so2 = so2;
+            this.so3 = so3;
+            this.so4 = so4;
+            this.so5 = so5;
+            this.so6 = so6;
+        }
+
+        getSo1() {
+            return this.so1;
+        }
+
+        setSo1(so1) {
+            this.so1 = so1;
+        }
+
+        getSo2() {
+            return this.so2;
+        }
+
+        setSo2(so2) {
+            this.so2 = so2;
+        }
+
+        getSo3() {
+            return this.so3;
+        }
+
+        setSo3(so3) {
+            this.so3 = so3;
+        }
+
+        getSo4() {
+            return this.so4;
+        }
+
+        setSo4(so4) {
+            this.so4 = so4;
+        }
+
+        getSo5() {
+            return this.so5;
+        }
+
+        setSo5(so5) {
+            this.so5 = so5;
+        }
+
+        getSo6() {
+            return this.so6;
+        }
+
+        setSo6(so6) {
+            this.so6 = so6;
+        }
+    }
+
+    let vietlot = new Vietlot(6);
+    let arr1;
+    let arr2;
+    let check = true;
+    let dem = 0;
+
+    function muaVeSo() {
+        while (dem < 4) {
+            let cachMua = prompt("Bạn muốn chọn vé số bằng cách nào??? \n" +
+                "1.Bạn tự nhập số \n" +
+                "2.Random \n");
+            switch (cachMua) {
+                case "1":
+                    check = true;
+                    let soThuNhat = prompt("Nhập số thứ nhất từ 0-->99");
+                    vietlot.setSo1(soThuNhat);
+                    document.getElementById("1").innerHTML = vietlot.getSo1();
+                    let soThuHai = prompt("Nhập số thứ hai từ 0-->99");
+                    vietlot.setSo2(soThuHai);
+                    document.getElementById("2").innerHTML = vietlot.getSo2();
+                    let soThuBa = prompt("Nhập số thứ ba từ 0-->99");
+                    vietlot.setSo3(soThuBa);
+                    document.getElementById("3").innerHTML = vietlot.getSo3();
+                    let soThuTu = prompt("Nhập số thứ tư từ 0-->99");
+                    vietlot.setSo4(soThuTu);
+                    document.getElementById("4").innerHTML = vietlot.getSo4();
+                    let soThuNam = prompt("Nhập số thứ năm từ 0-->99");
+                    vietlot.setSo5(soThuNam);
+                    document.getElementById("5").innerHTML = vietlot.getSo5();
+                    let soThuSau = prompt("Nhập số thứ sáu từ 0-->99");
+                    vietlot.setSo6(soThuSau);
+                    document.getElementById("6").innerHTML = vietlot.getSo6();
+                    arr1 = [vietlot.so1, vietlot.so2, vietlot.so3, vietlot.so4, vietlot.so5, vietlot.so6];
+                    dem++;
+                    return arr1;
+                    break;
+                case "2":
+                    check = false;
+                    vietlot.setSo1(Math.floor(Math.random() * 100));
+                    document.getElementById("1").innerHTML = vietlot.getSo1();
+                    vietlot.setSo2(Math.floor(Math.random() * 100));
+                    document.getElementById("2").innerHTML = vietlot.getSo2();
+                    vietlot.setSo3(Math.floor(Math.random() * 100));
+                    document.getElementById("3").innerHTML = vietlot.getSo3();
+                    vietlot.setSo4(Math.floor(Math.random() * 100));
+                    document.getElementById("4").innerHTML = vietlot.getSo4();
+                    vietlot.setSo5(Math.floor(Math.random() * 100));
+                    document.getElementById("5").innerHTML = vietlot.getSo5();
+                    vietlot.setSo6(Math.floor(Math.random() * 100));
+                    document.getElementById("6").innerHTML = vietlot.getSo6();
+                    arr2 = [vietlot.so1, vietlot.so2, vietlot.so3, vietlot.so4, vietlot.so5, vietlot.so6];
+                    dem++;
+                    return arr2;
+            }
+        }
+    }
+
+
+    function ketQua() {
+        let dem2 = 0;
+        let giaiThuong = [11, 22, 33, 44, 55, 66];
+        for (let i = 0; i < giaiThuong.length; i++) {
+            if (check) {
+                for (let j = 0; j < arr1.length; j++) {
+                    if (giaiThuong[i] == arr1[j]) {
+                        dem2++;
+                        arr1.splice(j, 1);
+                        break;
+                    }
+                }
+            } else {
+                for (let j = 0; j < arr2.length; j++) {
+                    if (giaiThuong[i] == arr2[j]) {
+                        dem2++;
+                        arr2.splice(j, 1);
+                        break;
+                    }
+                }
+            }
+        }
+        if (dem2 == 6) {
+            alert("Chúc mừng!!! Bạn đã trúng giải nhất là 12 tỷ VNĐ");
+        } else if (dem2 == 5) {
+            alert("Chúc mừng!!! Bạn đã trúng giải nhì là 10.000.000VNĐ");
+        } else if (dem2 >= 3) {
+            alert("Chúc mừng!!! Bạn đã trúng giải khuyến khích là 300.000 VNĐ");
+        } else {
+            alert("Chúc bạn may mắn lần sau");
+        }
+    }
+
+</script>
+</body>
+</html>

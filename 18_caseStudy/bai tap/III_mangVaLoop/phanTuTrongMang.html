@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = prompt("Nhập số lượng phần tử của mảng a");
+    } while (!(0 < n && n <= 20));
+    let a = new Array(n);
+    for (let i = 0; i < n; i++) {
+        a[i] = prompt("nhập phần tử thứ:" + i);
+    }
+    alert("Mảng a vừa tạo là:" + a);
+    let m;
+    do {
+        m = prompt("Nhập số lượng phần tử của mảng b lớn hơn mảng a");
+    } while (!(0 < m && m <= 20));
+    let b = new Array(m);
+    for (let i = 0; i < m; i++) {
+        b[i] = prompt("nhập phần tử thứ:" + i);
+    }
+    alert("Mảng a vừa tạo là:" + b);
+    let c=[];
+    for (let i = 0; i <b.length ; i++) {
+        if (a.indexOf(b[i])==-1){
+            c.push(b[i]);
+        }
+    }
+    c.sort(function (a,b) {
+    return a-b;
+    });
+    alert("Phần tử xuất hiện trong mảng b nhưng không xuất hiện trong mảng a là:" + c);
+</script>
+</body>
+</html>
